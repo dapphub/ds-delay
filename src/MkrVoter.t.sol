@@ -8,7 +8,7 @@ contract MkrVoterTest is DSTest {
     MkrVoter voter;
 
     function setUp() public {
-        voter = new MkrVoter();
+        voter = new MkrVoter(0);
     }
 
     function testFail_basic_sanity() public {
