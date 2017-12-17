@@ -11,12 +11,13 @@ contract StandardSetup {
                   )
         returns (MkrVoter)
     {
-        address[] memory colds = [cold1, cold2, cold3];
-        address[] memory cools = [cool1, cool2];
+        address[] colds; colds.push(cold1); colds.push(cold2); colds.push(cold3);
+        address[] cools; cools.push(cool1); cools.push(cool2);
         var Colds = new DSGroup(colds, 2, ms_window);
         var Cools = new DSGroup(cools, 2, ms_window);
         var voter = new MkrVoter(min_wait);
         voter.swap(Colds, Cools, warm);
+        return voter;
     }
 }
 
