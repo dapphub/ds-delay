@@ -66,6 +66,7 @@ contract MkrVoter {
 
     function fire(uint256 acti)
     {
+        require(msg.sender == warm || msg.sender == cool || msg.sender == cold);
         var act = acts[acti];
         require( uint40(now) < act.shut );
         require( act.whom.call.value(act.mana)(act.data) );
