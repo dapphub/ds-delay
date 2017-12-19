@@ -2,7 +2,7 @@
 
 pragma solidity ^0.4.19;
 
-contract MkrVoter {
+contract DSDelay {
     address  public  cold; // load, fire, swap, stop, start
     address  public  cool; // load, fire, stop
     address  public  warm; // fire, stop
@@ -23,7 +23,7 @@ contract MkrVoter {
         bool    done; // done
     }
 
-    function MkrVoter(uint40 wait_)
+    function DSDelay(uint40 wait_)
     {
         cold = msg.sender;
         wait = wait_;

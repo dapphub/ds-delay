@@ -2,13 +2,13 @@ pragma solidity ^0.4.19;
 
 import "ds-test/test.sol";
 
-import "./MkrVoter.sol";
+import "./ds-delay.sol";
 
-contract MkrVoterTest is DSTest {
-    MkrVoter voter;
+contract DSDelayTest is DSTest {
+    DSDelay delay;
 
     function setUp() public {
-        voter = new MkrVoter(0);
+        delay = new DSDelay(0);
     }
 
     function testFail_basic_sanity() public {
